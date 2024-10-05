@@ -12,7 +12,7 @@
 }
 a:focus {
   background-color: #e7ecfa;
-  outline: 3px solid #e7ecfa;
+  outline: 1px solid #e7ecfa;
 }
 #yt-masthead-user .yt-uix-button-icon-bell {
 visibility: visible;
