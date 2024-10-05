@@ -5,11 +5,69 @@
 @description  This style, powered with V3 and StarTube's 2011 theme, makes YouTube look more accurate to 2011 while keeping modern features intact.
 @author       thxdeeply
 @license      No License
+@preprocessor   stylus
+
+@var  select  autoplay-control "Autoplay Controls"  ["slider:Slider", "checkbox:Checkbox"]
 ==/UserStyle== */
 
 @-moz-document domain("youtube.com") {
-    /* Insert code here... */
+    /* Checkbox */
+    if autoplay-control is checkbox {
+.yt-uix-checkbox-on-off {
+  width: 13px;
+  height: 13px;
+  position: relative;
+  overflow: visible;
+  top: -2px;
 }
+.yt-uix-checkbox-on-off label .toggle {
+  display: none;
+}
+.yt-uix-checkbox-on-off input[type="checkbox"]:checked + label {
+  background: transparent no-repeat url(https://raw.githubusercontent.com/thxdeeply/tweaks/refs/heads/main/StarTubeYT2011/checkbox.png) -15px -10px;
+  border-radius: 0;
+}
+.yt-uix-checkbox-on-off input[type="checkbox"]:checked + label .checked {
+  display: none;
+}
+.yt-uix-checkbox-on-off label {
+  background: transparent no-repeat url(https://raw.githubusercontent.com/thxdeeply/tweaks/refs/heads/main/StarTubeYT2011/checkbox.png) -18px -29px;
+    border-radius: 0
+}
+.checkbox-on-off > label {
+  line-height: 1.3em;
+  margin-right: -2px;
+}
+}
+    /* Slider */
+if autoplay-control is slider {
+.yt-uix-checkbox-on-off {
+  width: 18px;
+  height: 11px;
+  position: relative;
+  overflow: visible;
+  top: -2px;
+}
+.yt-uix-checkbox-on-off label .toggle {
+  display: none;
+}
+.yt-uix-checkbox-on-off input[type="checkbox"]:checked + label {
+  background: transparent no-repeat url(https://web.archive.org/web/20100805062705im_/http://s.ytimg.com/yt/img/master-vfl181382.png) -60px -142px;
+    border-radius: 0
+}
+.yt-uix-checkbox-on-off input[type="checkbox"]:checked + label .checked {
+  display: none;
+}
+.yt-uix-checkbox-on-off label {
+  background: transparent no-repeat url(https://web.archive.org/web/20100805062705im_/http://s.ytimg.com/yt/img/master-vfl181382.png) -80px -142px;
+    border-radius: 0
+}
+.checkbox-on-off > label {
+  line-height: 1.3em;
+  margin-right: -2px;
+}
+}
+/* Other Code */
 a:focus {
   background-color: #e7ecfa;
   outline: 1px solid #e7ecfa;
@@ -408,31 +466,7 @@ border-top-color: #000;
 #yt-masthead-user .sb-notif-on .yt-uix-button-content {
   display: none;
 }
-.yt-uix-checkbox-on-off {
-  width: 13px;
-  height: 13px;
-  position: relative;
-  overflow: visible;
-  top: -2px;
-}
-.yt-uix-checkbox-on-off label .toggle {
-  display: none;
-}
-.yt-uix-checkbox-on-off input[type="checkbox"]:checked + label {
-  background: transparent no-repeat url(https://raw.githubusercontent.com/thxdeeply/tweaks/refs/heads/main/StarTubeYT2011/checkbox.png) -15px -10px;
-  border-radius: 0;
-}
-.yt-uix-checkbox-on-off input[type="checkbox"]:checked + label .checked {
-  display: none;
-}
-.yt-uix-checkbox-on-off label {
-  background: transparent no-repeat url(https://raw.githubusercontent.com/thxdeeply/tweaks/refs/heads/main/StarTubeYT2011/checkbox.png) -18px -29px;
-    border-radius: 0
-}
-.checkbox-on-off > label {
-  line-height: 1.3em;
-  margin-right: -2px;
-}
+
 [exp-aozora-header] body .v3 #yt-masthead-user {
   margin-top: 7px;
   display: flex;
@@ -557,8 +591,6 @@ border-top-color: #000;
     white-space: nowrap;
     background-color: #000;
     background-color: rgba(0, 0, 0, .85);
-    filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr="#D8000000",endColorStr="#D8000000");
-    -ms-filter: "progid:DXImageTransform.Microsoft.Gradient(startColorStr=#D8000000, endColorStr=#D8000000)";
     border: 1px solid #ccc;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -578,4 +610,5 @@ border-top-color: #000;
     border-width: 5px 5px 0;
     border-top-color: #000;
     border-top-color: rgba(0, 0, 0, .85);
+}
 }
