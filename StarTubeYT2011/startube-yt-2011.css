@@ -1,0 +1,396 @@
+/* ==UserStyle==
+@name         StarTube Early 2011 Aozora Tweaks
+@version      20241004.1.0
+@namespace    https://userstyles.world/user/thxdeeply
+@description  This style, powered with V3 and StarTube's 2011 theme, makes YouTube look more accurate to 2011 while keeping modern features intact.
+@author       thxdeeply
+@license      No License
+==/UserStyle== */
+
+@-moz-document domain("youtube.com") {
+    /* Insert code here... */
+}
+
+#yt-masthead-user .yt-uix-button-icon-bell {
+visibility: visible;
+}
+#yt-masthead-user #sb-button-notify {
+position: absolute;
+margin-left: -100px;
+}
+#yt-masthead-dropdown {
+border-top-color: #000;
+margin-left: -3px;
+margin-top: 10px;
+}
+#yt-masthead-dropdown.reversed {
+border-bottom-color: #000;
+}
+#yt-masthead-user-displayname {
+font: 12px arial,sans-serif !important;
+color: #000 !important;
+margin-top: -2px;
+}
+#yt-masthead #appbar-guide-button ~ #masthead-search {
+width: 410px;
+}
+#yt-masthead-content {
+width: 630px;
+}
+body #masthead-expanded-container {
+background: #fff;
+}
+#masthead-expanded .masthead-expanded-menu-item a, #footer-links-primary a, #footer-links-secondary a, .multirow-shelf .yt-uix-expander-head {
+color: #03c !important;
+}
+#footer-links-primary a, #footer-links-secondary a, .multirow-shelf .yt-uix-expander-head {
+font: 12px arial,sans-serif;
+}
+
+.distiller_yt-post-content {
+margin-left: -60px;
+}
+.distiller_yt-post_comment_section .distiller_yt-post-content {
+margin-left: -102px;
+}
+.distiller_yt-thread .channel_owner span {
+background-color: #dbe4eb00;
+}
+.profileLink {
+color: #4272db;
+font: 11px arial,sans-serif;
+}
+.distiller_yt_headline {
+font-size: 13px !important;
+text-transform: capitalize;
+
+}
+.distiller_yt_instance {
+margin-left: -25px;
+}
+[exp-legacy-comments] .entries .comment {
+padding-left: 30px;
+}
+.distiller_yt-thread .channel_owner span {
+padding-left: 0px;
+}
+.distiller_yt-thread .author .profileLink {
+margin-top: 2px;
+}
+[exp-aozora-comments] .load-more-link:hover {
+opacity: 100%;
+}
+[exp-aozora-comments] .proflinkPrefix {
+visibility: hidden;
+}
+[exp-aozora-comments] .proflinkPrefix:before {
+visibility: visible;
+content: "@";
+cursor: pointer;
+}
+[exp-legacy-comments] .proflink {
+margin-left: -6px;
+}
+
+b {
+font-weight: 100 !important;
+}
+.stream_content > .continuation_item_wrapper > .load-more-button > .jfk-button-text {
+background-image: linear-gradient(rgb(255, 255, 255) 0%, rgb(239, 239, 239) 100%) !important;
+}
+.stream_content > .continuation_item_wrapper > .load-more-button > .jfk-button-text .run {
+background-image: linear-gradient(rgb(255, 255, 255) 0%, rgb(239, 239, 239) 100%) !important;
+font-weight: normal;
+}
+
+.distiller-standard-button .jfk-button-text {
+  font-size: 12px;
+    font-weight: normal;
+  margin-right: 5px;
+}
+.distiller-standard-button, .distiller-button.jfk-button-action {
+  padding: 0 6px !important;
+  height: 25px !important;
+  border: 1px solid #ccc !important;
+  color: #000;
+  background-image: linear-gradient(rgb(255, 255, 255) 0%, rgb(239, 239, 239) 100%) !important;
+  border-radius: 3px;
+  font-weight: normal;
+  font-size: 12px;
+  box-shadow: none;
+  opacity: 1;
+}
+.distiller-standard-button:hover, .distiller-button.jfk-button-action:hover {
+  box-shadow: rgb(153, 153, 153) 0px 0px 3px 0px;
+  border-color: #999 !important;
+  background-image: linear-gradient(rgb(255, 255, 255) 0%, rgb(235, 235, 235) 100%) !important;
+}
+.distiller-standard-button:active, .distiller-button.jfk-button-action:active {
+  background-image: linear-gradient(rgb(204, 204, 204) 0%, rgb(255, 255, 255) 100%) !important;
+  border-color: #999;
+}
+.autoplay-bar .checkbox-on-off {
+  font-size: 13px;
+  font-weight: normal;
+  color: #666;
+}
+#watch7-sidebar-contents .autoplay-bar .watch-sidebar-head {
+  color: #666;
+  font-weight: normal;
+}
+[exp-watch5d] #watch-headline-title {
+  margin-bottom: 5px;
+}
+[exp-watch5d] #page.watch {
+  padding-top: 5px;
+}
+[exp-aozora-styles] #watch7-sidebar-contents .autoplay-bar .watch-sidebar-head {
+  padding: 0 0 4px 0;
+  border-bottom: 1px solid #e2e2e2;
+  margin: 0 0 10px;
+}
+[exp-aozora-styles] #watch7-sidebar .watch-sidebar-separation-line {
+    margin: 5px 0;
+}
+.all-comments {
+padding: 0 3px;
+border-bottom: 1px solid #e2e2e2;
+color: #666;
+font-weight: 400;
+line-height: 1.9231em;
+font-size: 1.0833em;
+}
+[exp-watch5c] .watch5 #watch-description-text {
+  font-size: 13px;
+}
+.video-time, .video-actions {
+  right: 5px;
+  bottom: 5px;
+  position: absolute;
+}
+#watch7-sidebar .watch-sidebar-section {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 15px 20px;
+}
+#watch-description.yt-uix-expander-collapsed #watch-description-content {
+  margin-top: -2px;
+}
+#watch-description-extra-info {
+  padding-top: 20px;
+}
+#watch-description-extra-info .metadata-info-title {
+  color: #666;
+  font-weight: normal;
+}
+#watch-description-extra-info .metadata-info {
+  margin-left: 30px;
+}
+#watch-description-extra-info .offer-image-thumbnail {
+  float: left;
+  margin: 6px 0 0 30px;
+  width: 60px;
+}
+#watch-description-extra-info .offer-links-with-thumbnail {
+  margin: 6px 0 0 96px !important;
+}
+.watch-extras-section .title {
+  text-align: left;
+}
+.video-list .video-list-item .description, .video-list .video-list-item .stat {
+  color: #666;
+}
+html {
+  --related-item-width: 106px;
+}
+[exp-watch5d] .watch5 #watch7-sentiment-actions {
+  margin-top: 0;
+  margin-right: 4px;
+}
+[exp-watch5d] #watch5-other-actions .yt-uix-button {
+  margin-left: 1px;
+  margin-right: 4px;
+}
+
+.feed-item-container:hover .feed-item-header a, .feed-item-container:hover a.yt-user-name {
+  color: #03c;
+}
+.distiller_yt-sb-standin .thumbnail, .distiller_yt-sb .sb-photo {
+  display: none;
+}
+.distiller_yt-sb-standin .callout + .box, .distiller_yt-sb .sb_text_input {
+  margin-left: 0;
+}
+.distiller_yt-sb-standin, .distiller_yt-sb {
+    width:473px;
+}
+.distiller_yt-sb .callout, .distiller_yt-sb-standin .callout {
+    display: none;
+}
+.oz-comment_post-dismiss {
+  margin-left: auto;
+  float: left;
+  background: none;
+}
+.oz-comment_post-dismiss {
+    display:inline;
+    position:revert;
+    width: auto;
+    opacity:1;
+    height:28px;
+}
+.oz-comment_post-dismiss:hover {
+    opacity:1;
+}
+.distiller_yt-sb .sb-photo ~ .action_bar .left_actions {
+  margin-left: 0;
+}
+.distiller_yt-sb .action_bar {
+  display: inline-block;
+  float: right;
+    margin-top: 7px;
+}
+
+.oz-comment_post-dismiss::before {
+    content: 'Cancel';
+    font-size:12px;
+    color:#03c!important;
+    display:inline;
+    line-height:28px;
+}
+.oz-comment_post-dismiss::before:hover {
+    content: 'Cancel';
+    font-size:12px;
+    color:#03c!important;
+    display:inline;
+    line-height:28px;
+}
+.oz-comment_post-dismiss:hover {
+    text-decoration: underline;
+    color:#03c;
+}
+.oz-comment_post-dismiss::after {
+    content: ' or ';
+    font-size:12px;
+    color:black!important;
+    display:inline;
+    line-height:28px;
+    text-decoration: none!important;
+}
+.body .right_actions > button:nth-child(1) {
+    display: none;
+}
+.distiller-button.jfk-button-action {
+    margin-left:4px;
+}
+.distiller_stream-options .right-options {
+    display: none;
+}
+#comments-order-popup {
+  border: 1px solid #999;
+  box-shadow: 0 0 3px #999;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+#comments-order-popup > li {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #ebebeb;
+}
+#comments-order-popup .yt-uix-button-menu-item {
+  padding: 0 8px;
+  line-height: 29px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #000;
+}
+#comments-order-popup, #comments-order-popup + .yt-uix-button-menu-mask {
+  margin-top: 0;
+}
+#yt-masthead-user .yt-masthead-user-icon {
+  padding: 0;
+  cursor: pointer;
+  display: none;
+}
+.distiller-button .oz-sprite {
+  display: inline-block;
+  position: relative;
+  top: -5px;
+  border: 1px solid transparent;
+  border-width: 5px 5px 0;
+  border-top-color: #666;
+  margin-top: 13px;
+  background: no-repeat url(https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif);
+  width: 0;
+  vertical-align: middle;
+}
+.distiller-button:hover .oz-sprite {
+border-top-color: #000;    
+}
+.distiller-button:active .oz-sprite {
+border-top-color: #000;    
+}
+.distiller-button:focus .oz-sprite {
+border-top-color: #000;    
+}
+.startube-reply .distiller_yt-thread_user-content.yt-uix-expander-collapsed .text-content {
+  padding-right: 30px;
+}
+.distiller_yt-sb-standin .body, .distiller_yt-sb .body {
+  padding: 7px 0 7px;
+}
+[exp-legacy-comments] #watch-discussion {
+  padding: 17px 0 0 0;
+}
+.distiller_stream-options {
+  padding: 0 0 7px 0;
+}
+.distiller_yt-sb-container {
+  min-height: 63px;
+}
+.distiller_yt-sb {
+  position: relative;
+  margin: 0px 0 27px;
+}
+[exp-aozora-header] body .v3 #yt-masthead #appbar-guide-button ~ #masthead-search {
+  margin-left: 0;
+}
+#aozora-topbar-links {
+  margin-right: 10px;
+}
+.yt-badge {
+  color: #666;
+  border:1px solid #ccc;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: normal;
+  text-decoration: none;
+  padding: 0 2px;
+}
+.video-list .video-list-item .yt-uix-button-subscription-container {
+  position: absolute;
+  left: 121px;
+}
+.video-list .video-list-item a.related-channel {
+  padding-left: 49px;
+}
+.yt-subscription-button-subscriber-count-unbranded-horizontal, .yt-subscription-button-subscriber-count-unbranded-vertical {
+  padding: 0 2px;
+  border: 1px solid #ccc;
+  color: #666;
+}
+.yt-subscription-button-subscriber-count-branded-horizontal, .yt-subscription-button-subscriber-count-unbranded-horizontal {
+  background-color: #fff;
+}
+.yt-subscription-button-subscriber-count-unbranded-horizontal::before {
+  border-color: transparent #ccc;
+}
+.yt-subscription-button-subscriber-count-unbranded-horizontal::after {
+  border-color: transparent #fff;
+}
+#watch-description.yt-uix-expander-collapsed #watch-description-content.click-to-buy {
+  height: 103px;
+}
+#watch-description #watch-description-content.click-to-buy {
+  min-height: 103px;
+}
