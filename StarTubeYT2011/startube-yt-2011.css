@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         StarTube Early 2011 Aozora Tweaks
-@version      20241004.1.0
+@version      20241005.2.0
 @namespace    https://userstyles.world/user/thxdeeply
 @description  This style, powered with V3 and StarTube's 2011 theme, makes YouTube look more accurate to 2011 while keeping modern features intact.
 @author       thxdeeply
@@ -10,13 +10,12 @@
 @-moz-document domain("youtube.com") {
     /* Insert code here... */
 }
-
+a:focus {
+  background-color: #e7ecfa;
+  outline: 3px solid #e7ecfa;
+}
 #yt-masthead-user .yt-uix-button-icon-bell {
 visibility: visible;
-}
-#yt-masthead-user #sb-button-notify {
-position: absolute;
-margin-left: -100px;
 }
 #yt-masthead-dropdown {
 border-top-color: #000;
@@ -29,7 +28,7 @@ border-bottom-color: #000;
 #yt-masthead-user-displayname {
 font: 12px arial,sans-serif !important;
 color: #000 !important;
-margin-top: -2px;
+margin-top: 0;
 }
 #yt-masthead #appbar-guide-button ~ #masthead-search {
 width: 410px;
@@ -45,13 +44,6 @@ color: #03c !important;
 }
 #footer-links-primary a, #footer-links-secondary a, .multirow-shelf .yt-uix-expander-head {
 font: 12px arial,sans-serif;
-}
-
-.distiller_yt-post-content {
-margin-left: -60px;
-}
-.distiller_yt-post_comment_section .distiller_yt-post-content {
-margin-left: -102px;
 }
 .distiller_yt-thread .channel_owner span {
 background-color: #dbe4eb00;
@@ -150,7 +142,7 @@ font-weight: normal;
   margin: 0 0 10px;
 }
 [exp-aozora-styles] #watch7-sidebar .watch-sidebar-separation-line {
-    margin: 5px 0;
+  border-bottom: 0;
 }
 .all-comments {
 padding: 0 3px;
@@ -357,6 +349,7 @@ border-top-color: #000;
 }
 #aozora-topbar-links {
   margin-right: 10px;
+  margin-left: 12px;
 }
 .yt-badge {
   color: #666;
@@ -393,4 +386,196 @@ border-top-color: #000;
 }
 #watch-description #watch-description-content.click-to-buy {
   min-height: 103px;
+}
+#yt-masthead-user .yt-uix-button-icon-bell {
+  opacity: 1;
+}
+#yt-masthead-user .sb-notif-off .yt-uix-button-icon-bell {
+    background: no-repeat url(https://web.archive.org/web/20091224010720im_/http://s.ytimg.com/yt/img/master-vfl136487.png) 0px -736px;
+    width: 14px;
+    height: 15px;
+}
+#yt-masthead-user .sb-notif-on .yt-uix-button-icon-bell {
+    background: no-repeat url(https://web.archive.org/web/20091224010720im_/http://s.ytimg.com/yt/img/master-vfl136487.png) -14px -736px;
+    width: 21px;
+    height: 15px;
+}
+#yt-masthead-user .yt-uix-button-icon-bell {
+  position: absolute;
+  left: 8px;
+  top: 5px;
+}
+#yt-masthead-user .sb-notif-on .yt-uix-button-content {
+  display: none;
+}
+.yt-uix-checkbox-on-off {
+  width: 13px;
+  height: 13px;
+  position: relative;
+  overflow: visible;
+  top: -2px;
+}
+.yt-uix-checkbox-on-off label .toggle {
+  display: none;
+}
+.yt-uix-checkbox-on-off input[type="checkbox"]:checked + label {
+  background: transparent no-repeat url(https://raw.githubusercontent.com/thxdeeply/tweaks/refs/heads/main/StarTubeYT2011/checkbox.png) -15px -10px;
+  border-radius: 0;
+}
+.yt-uix-checkbox-on-off input[type="checkbox"]:checked + label .checked {
+  display: none;
+}
+.yt-uix-checkbox-on-off label {
+  background: transparent no-repeat url(https://raw.githubusercontent.com/thxdeeply/tweaks/refs/heads/main/StarTubeYT2011/checkbox.png) -18px -29px;
+    border-radius: 0
+}
+.checkbox-on-off > label {
+  line-height: 1.3em;
+  margin-right: -2px;
+}
+[exp-aozora-header] body .v3 #yt-masthead-user {
+  margin-top: 7px;
+  display: flex;
+  align-items: center;
+}
+#yt-masthead-dropdown {
+  margin-left: 1px;
+  margin-top: -1px;
+}
+#sb-button-notify {
+    order: 1;
+}
+#yt-masthead-user-displayname {
+  order: 2;
+  max-width: 169px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#yt-masthead-dropdown {
+    order: 3;
+}
+#yt-masthead-user #sb-button-notify {
+  margin-right: 3px;
+}
+#yt-masthead-user {
+  float: right;
+  margin-left: 0;
+}
+.gstl_50 .gssb_c {
+    font-size:12px!important;
+}
+.gsfs {
+    font-size: 13px;
+}
+.gssb_a {
+    padding: 0 4px;
+}
+.gssb_a, .gssb_a td {
+    line-height: 17px;
+}
+.gssb_i td {
+    background:#36c;
+    color: white;
+}
+.gssb_e {
+    border: 1px solid #999;
+    border-top-color: #999;
+}
+#yt-picker-language-button, #yt-picker-country-button, #yt-picker-safetymode-button, #yt-picker-darktheme-button {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    font-weight: normal;
+    color: #03c;
+    font-size: 11px;
+    padding: 0;
+}
+#footer .yt-uix-button-icon-wrapper {
+    display: none;
+}
+#footer .yt-uix-button-arrow {
+    display: none;
+}
+#footer-logo {
+    display: none;
+}
+#footer-main {
+    border-bottom: none;
+    margin-right: 45px;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+#footer-main {
+    border-bottom: none;
+    margin-right: 45px;
+    padding-bottom: 0;
+    padding-left: 0;
+    order: 2;
+}
+#footer-links {
+    order: 1;
+    display: flex;
+    line-height: 26px;
+}
+#footer {
+    display: flex;
+    flex-direction: column;
+}
+#footer-links-primary a, #footer-links-secondary a, .multirow-shelf .yt-uix-expander-head {
+    font: 13px arial, sans-serif;
+}
+#footer-links-primary {
+    margin-bottom: 0;
+}
+.yt-uix-button-link {
+    color: #03c;
+}
+.yt-default h3, h3.yt {
+    font-size: 16px;
+}
+.yt-default .yt-notes, p.yt-notes {
+    font-size: 12px;
+    color: #000;
+    margin-top: 0.5em;
+}
+.yt-picker-header {
+    border-bottom: 1px solid #ccc;
+}
+#footer .yt-picker {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+#footer-links {
+  padding: 0;
+}
+.yt-uix-range-tooltip-tip-content, .yt-uix-tooltip-tip-content {
+    position: relative;
+    padding: .5em;
+    color: #fff;
+    font-weight: normal;
+    font-size: 12px;
+    white-space: nowrap;
+    background-color: #000;
+    background-color: rgba(0, 0, 0, .85);
+    filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr="#D8000000",endColorStr="#D8000000");
+    -ms-filter: "progid:DXImageTransform.Microsoft.Gradient(startColorStr=#D8000000, endColorStr=#D8000000)";
+    border: 1px solid #ccc;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 3px #333;
+    -webkit-box-shadow: 0 0 3px #333;
+    box-shadow: 0 0 3px #333;
+    zoom: 1;
+}
+.yt-uix-range-tooltip-tip-arrow, .yt-uix-tooltip-tip-arrow {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    vertical-align: top;
+    border: 1px solid transparent;
+    border-width: 5px 5px 0;
+    border-top-color: #000;
+    border-top-color: rgba(0, 0, 0, .85);
 }
