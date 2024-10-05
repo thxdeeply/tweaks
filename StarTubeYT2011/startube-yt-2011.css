@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         StarTube Early 2011 Aozora Tweaks
-@version      20241005.3.0
+@version      20241005.4.0
 @namespace    https://userstyles.world/user/thxdeeply
 @description  This style, powered with V3 and StarTube's 2011 theme, makes YouTube look more accurate to 2011 while keeping modern features intact.
 @author       thxdeeply
@@ -610,5 +610,503 @@ border-top-color: #000;
     border-width: 5px 5px 0;
     border-top-color: #000;
     border-top-color: rgba(0, 0, 0, .85);
+}
+.playlist #watch7-playlist-bar-controls, .playlist .watch7-playlist-bar-left .title, .playlist .watch7-playlist-bar-left .yt-user-name:hover, .playlist .watch7-playlist-bar-notifications {
+    color: #000;
+}
+
+#watch7-playlist-tray .playlist-bar-item-playing {
+    border-color: #d1e1fa;
+    background: #d1e1fa;
+}
+#watch7-playlist-tray .video-list-item {
+    background: #fff;
+    border-top: 0;
+    border-bottom: 0;
+    text-shadow: none;
+}
+#watch7-playlist-tray .playlist-bar-item-playing .stat, #watch7-playlist-tray .video-list-item .title {
+    color: #03c;
+}
+#watch7-playlist-tray .video-list-item .title {
+    font-weight: normal;
+    font-size: 13px;
+}
+#watch7-playlist-bar-controls {
+    border-left: 1px solid #cccccc;
+    background: #eeeeee;
+}
+.watch7-playlist-bar-left {
+    color: #000;
+    background: #eeeeee;
+}
+.watch7-playlist-bar-notifications {
+    color: #000;
+    background: #eeeeee;
+}
+.watch7-playlist-bar-secondary-controls {
+    color: #000;
+    background: #eeeeee;
+}
+.watch7-playlist-bar {
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+}
+.watch7-playlist-bar-left {
+    border-left: 1px solid #cccccc;
+}
+.watch7-playlist-bar-right {
+    border-right: 1px solid #cccccc;
+}
+a.spf-link:focus {
+    background-color: #d1e1fa;
+}
+#watch7-playlist-tray .video-list-item a:hover {
+    background: #d1e1fa;
+}
+.watch7-playlist-bar-left, .watch7-playlist-bar-right, .watch7-playlist-bar {
+    height: 23px;
+    line-height: 23px;
+}
+.watch7-playlist-bar-secondary-controls {
+    height: 23px;
+    line-height: 23px;
+}
+#watch7-playlist-bar-controls {
+    height: 23px;
+    line-height: 23px;
+}
+#watch7-playlist-bar-controls, .watch7-playlist-bar-left .title, .watch7-playlist-bar-secondary-controls {
+    padding: 0 5px;
+}
+.playlist .watch7-playlist-bar-left .title {
+    font-size: 14px;
+    font-weight: bold;
+}
+.playlist .paused .watch7-playlist-bar-notifications, .playlist .watch7-playlist-bar-left .yt-user-name {
+    color: #000;
+}
+.yt-uix-button-icon-playlist-bar-prev, .rtl .yt-uix-button-icon-playlist-bar-next {
+    background: no-repeat url(https://raw.githubusercontent.com/thxdeeply/tweaks/refs/heads/main/StarTubeYT2011/master-vfl181382_2.png) 0px -100px;
+    background-size: auto;
+    width: 13px;
+    height: 15px;
+}
+.yt-uix-button-icon-playlist-bar-prev:hover, .rtl .yt-uix-button-icon-playlist-bar-next:hover {
+    background: no-repeat url(https://raw.githubusercontent.com/thxdeeply/tweaks/refs/heads/main/StarTubeYT2011/master-vfl181382_2.png) 0px -116px;
+    background-size: auto;
+    width: 13px;
+    height: 15px;
+}
+.yt-uix-button-icon-playlist-bar-next, .rtl .yt-uix-button-icon-playlist-bar-prev {
+    background: no-repeat url(https://raw.githubusercontent.com/thxdeeply/tweaks/refs/heads/main/StarTubeYT2011/master-vfl181382_2.png) -14px -100px;
+    background-size: auto;
+    width: 13px;
+    height: 15px;
+}
+.yt-uix-button-icon-playlist-bar-next:hover, .rtl .yt-uix-button-icon-playlist-bar-prev:hover {
+    background: no-repeat url(https://raw.githubusercontent.com/thxdeeply/tweaks/refs/heads/main/StarTubeYT2011/master-vfl181382_2.png) -14px -116px;
+    background-size: auto;
+    width: 13px;
+    height: 15px;
+}
+.yt-uix-button .yt-uix-button-icon-playlist-bar-autoplay {
+    background: no-repeat url(https://raw.githubusercontent.com/thxdeeply/tweaks/refs/heads/main/StarTubeYT2011/master-vfl181382_2.png) -50px -100px;
+    background-size: auto;
+    width: 17px;
+    height: 16px;
+}
+.yt-uix-button .yt-uix-button-icon-playlist-bar-autoplay:hover {
+    background: no-repeat url(https://raw.githubusercontent.com/thxdeeply/tweaks/refs/heads/main/StarTubeYT2011/master-vfl181382_2.png) -50px -116px;
+    background-size: auto;
+    width: 17px;
+    height: 16px;
+}
+.yt-uix-button .yt-uix-button-icon-playlist-bar-shuffle {
+    background: no-repeat url(https://raw.githubusercontent.com/thxdeeply/tweaks/refs/heads/main/StarTubeYT2011/master-vfl181382_2.png) -68px -101px;
+    background-size: auto;
+    width: 17px;
+    height: 13px;
+}
+.yt-uix-button .yt-uix-button-icon-playlist-bar-shuffle:hover {
+    background: no-repeat url(https://raw.githubusercontent.com/thxdeeply/tweaks/refs/heads/main/StarTubeYT2011/master-vfl181382_2.png) -68px -117px;
+    background-size: auto;
+    width: 17px;
+    height: 13px;
+}
+.yt-uix-button-icon-playlist-bar-close {
+    background: no-repeat url(https://raw.githubusercontent.com/thxdeeply/tweaks/refs/heads/main/StarTubeYT2011/master-vfl181382_2.png) -109px -100px;
+    height: 13px;
+    width: 13px;
+    filter: invert(0);
+}
+.yt-uix-button-icon-playlist-bar-close:hover {
+    background: no-repeat url(https://raw.githubusercontent.com/thxdeeply/tweaks/refs/heads/main/StarTubeYT2011/master-vfl181382_2.png) -109px -116px;
+    height: 13px;
+    width: 13px;
+    filter: invert(0);
+}
+.yt-uix-button[disabled], .yt-uix-button[disabled]:hover, .yt-uix-button[disabled]:active, .yt-uix-button[disabled]:focus {
+    opacity: 1;
+}
+.yt-uix-button-player-controls .yt-uix-button-icon {
+    opacity: 1;
+}
+.yt-uix-button-player-controls:hover .yt-uix-button-icon {
+    opacity: 1;
+}
+#watch7-playlist-tray .video-list-item a {
+    padding: 2px 0 2px 5px !important;
+    margin: 5px 0 5px 20px;
+}
+#watch7-playlist-tray, #watch7-playlist-tray-mask {
+    background: #ffffff;
+}
+#watch7-playlist-tray .video-list-item:hover {
+    border-color: transparent;
+    background: #fff;
+}
+#watch7-playlist-tray .video-list-item .count {
+    position: absolute;
+    visibility: hidden;
+}
+#watch7-playlist-tray-container {
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    height: 389px;
+}
+#watch7-playlist-tray .video-list-item .video-thumb {
+    background: #fff;
+    border: 1px solid #d3d3d3;
+    border-radius: 3px;
+    padding: 4px;
+    width: 64px !important;
+}
+#watch7-playlist-tray .video-list-item .title {
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+.yt-alert-default.yt-alert-info, .yt-alert-actionable.yt-alert-info, .yt-alert-naked.yt-alert-info .yt-alert-icon, .yt-alert-small.yt-alert-info {
+    background: #cce0f5;
+    border-radius: 5px;
+    border-color: transparent;
+}
+.yt-alert-default .yt-alert-content a, .yt-alert-actionable .yt-alert-content a, .yt-alert-small .yt-alert-content a {
+    color: #03c;
+    background: transparent;
+    outline: none;
+}
+.yt-alert-actionable .yt-alert-buttons, .yt-alert-default .yt-alert-content {
+    color: #000;
+    font-size: 13px;
+    font-weight: bold;
+}
+.yt-alert-default.yt-alert-info .icon, .yt-alert-actionable.yt-alert-info .icon {
+    background: no-repeat url(https://raw.githubusercontent.com/thxdeeply/tweaks/refs/heads/main/StarTubeYT2011/msg_icn-vfl138364.png) -137px -1px;
+    background-size: auto;
+    width: 34px;
+    height: 32px;
+}
+.yt-alert-actionable .yt-alert-content, .yt-alert-default .yt-alert-content {
+    padding: 11px 0 11px 9px;
+    text-shadow: none;
+}
+.yt-alert .close:hover {
+    background-color: transparent;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+.yt-alert {
+    position: relative;
+    margin: 5px 0 0;
+    padding: 0;
+    overflow: hidden;
+}
+.yt-alert .close {
+    margin: 3px;
+    border: none;
+    overflow: hidden;
+    cursor: pointer;
+    background: no-repeat url(https://raw.githubusercontent.com/thxdeeply/tweaks/refs/heads/main/StarTubeYT2011/msg_icn-vfl138364.png) -225px -11px;
+    width: 12px;
+    height: 12px !important;
+    padding: 0;
+}
+.yt-scrollbar-dark ::-webkit-scrollbar-track {
+  border-left-color:transparent;
+  background:#ccc;
+  -webkit-box-shadow:none;
+}
+.yt-scrollbar-dark ::-webkit-scrollbar-thumb {
+  border-left-color:transparent;
+  background:#777;
+}
+.yt-scrollbar-dark ::-webkit-scrollbar-track:hover {
+  -webkit-box-shadow:none
+}
+.yt-scrollbar-dark ::-webkit-scrollbar-thumb:hover {
+  background:#ccc;
+}
+#watch-playlist-privacy-icon.public img, #watch7-headline #watch-privacy-icon.public img {
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflEXP50f.png) -47px -540px;
+    background-size: auto;
+    width: 24px;
+    height: 20px;
+    margin-bottom: 4px;
+}
+
+.live_chat_box_iframe_holder {
+    margin-left: 0;
+    margin-bottom: 7px;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+.livestream_chat .header {
+    background: #eee;
+    height: 23px;
+    border: 1px solid #ccc;
+    border-left: 0;
+    border-right: 0;
+    color: #000;
+    box-shadow: none;
+}
+.livestream_chat .header .title {
+    font-size: 12px;
+    top: 0;
+    text-shadow: none;
+    left: 25px;
+}
+.livestream_chat .header .oz-sprite-conversation-icon {
+    width: 23px;
+    height: 23px;
+    top: 0px;
+    left: 5px;
+}
+.livestream_chat .header .now {
+    background: transparent no-repeat url(https://s.ytimg.com/yt/img/master.png) -159px -757px;
+    border-radius: 0;
+}
+.livestream_chat .header .now {
+    top: 8px;
+    left: 32px!important;
+    height: 10px;
+    width: 10px;
+    z-index: 1;
+}
+.livestream_chat .header .title .jfk-button {
+    height: 23px;
+    line-height: 23px;
+    padding-left: 50px;
+}
+.livestream_chat.yt-uix-expander-collapsed {
+    height: 23px !important;
+}
+.livestream_chat .header .oz-sprite-conversation-expander {
+    right: 4px;
+    width: 16px;
+    height: 16px;
+    top: 3px;
+    background: no-repeat url(https://s.ytimg.com/yt/img/master.png) -16px -142px;
+    transform: rotate(0deg);
+}
+.oz-sprite-conversation-expander {
+    background: no-repeat url(https://s.ytimg.com/yt/img/master.png) 0 -142px;
+}
+.oz-sprite-conversation-icon {
+    background: no-repeat url(https://s.ytimg.com/yt/img/master.png) -80px -758px;
+    width: 14px;
+    height: 13px;
+}
+.livestream_chat .header .oz-sprite-conversation-icon {
+    width: 14px;
+    height: 13px;
+    top: 5px;
+    left: 5px;
+}
+.livestream_chat .header .title .jfk-button {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#cfcfcf));
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding-left: 20px;
+}
+.livestream_chat .header .title:hover .jfk-button {
+    background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#cfcfcf));
+}
+.livestream_chat .header .title .jfk-button:hover, .livestream_chat .header .title .jfk-button:focus {
+    box-shadow: 0 0 3px #999;
+}
+
+.livestream_chat .header .title .jfk-button:active {
+    background: -webkit-gradient(linear, left top, left bottom, from(#cfcfcf), to(#fcfcfc));
+}
+.oz-expander-arrow-down {
+display: inline-block;
+    position: relative;
+    top: -5px;
+    border: 1px solid transparent;
+    border-width: 5px 5px 0;
+    border-top-color: #767676;
+    margin-top: 13px;
+    background: no-repeat url(https://s.ytimg.com/yts/img/pixel-vfl3z5WfW.gif);
+    width: 0;
+    vertical-align: middle;
+}
+.livestream_chat .header .title .jfk-button .oz-expander-arrow-down {
+    opacity: 1;
+}
+.livestream_chat .header .now {
+    top: 6px;
+    left: 79px;
+    height: 10px;
+    width: 10px;
+    z-index: 1;
+}
+.livestream_chat .collapsible .live_streamcontent_container {
+    background: #ffffff;
+}
+.livestream_chat .collapsible .create_message {
+    bottom: -25px;
+    background: #fff;
+    border-top: 1px solid #ccc;
+}
+.livestream_chat .collapsible .live_streamcontent_container {
+    height: calc(100% - 35px);
+}
+.livechat_message .avatar {
+    margin-left: 17px;
+    display: none;
+    vertical-align: top;
+}
+.livechat_message .chatfly:before, .livechat_message .chatfly:after {
+    content:none;
+}
+.livechat_message .chatfly {
+    border-top-left-radius: 5px;
+    box-shadow: none;
+}
+.livechat_message .chatfly {
+    position: relative;
+    display: inline-block;
+    margin-left: 7px;
+    background: #fff;
+    max-width: 100%;
+    padding: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+.livestream_chat .collapsible .create_message .avatar {
+    display: none;
+}
+.livestream_chat .create_message .distiller_yt-sb .body {
+    position: relative;
+}
+.livestream_chat .create_message .distiller_yt-sb .action_bar {
+    position: absolute;
+    left: 200px;
+}
+.livestream_chat .create_message .distiller_yt-sb .action_bar .jfk-button-action .jfk-button-text {
+    background: transparent;
+    background-image: unset;
+    background-size: auto;
+    width: 0;
+    height: 0;
+}
+.livestream_chat .create_message .distiller_yt-sb .action_bar .jfk-button-action {
+    background: transparent;
+    border: 0;
+    color: #03c;
+    padding: 0;
+    font-size: 12px;
+    font-weight: normal;
+}
+.livestream_chat .create_message .distiller_yt-sb .action_bar .jfk-button-action {
+    margin-right: 0;
+}
+.livestream_chat .create_message .distiller_yt-sb .sb_text_input {
+    min-height: 25px;
+    display: inline-block;
+    width: 257px;
+    max-height: 50px;
+    margin-left: 7px;
+}
+.livechat_message .byline .page_link {
+    color: #03c;
+    font-size: 11px;
+}
+#watch-playlist-privacy-icon.public img, #watch7-headline #watch-privacy-icon.public img {
+    background: no-repeat url(https://web.archive.org/web/20111124141552if_/https://s.ytimg.com/yt/img/videomanager/vm-sprite-vflb_70nU.png) -57px 0px;
+    background-size: auto;
+    width: 13px;
+    height: 13px;
+    margin-bottom: 4px;
+}
+#watch-playlist-privacy-icon {
+    padding-left: 5px;
+}
+#watch-playlist-privacy-icon.unlisted img, #watch7-headline #watch-privacy-icon.unlisted img {
+    background: no-repeat url(https://web.archive.org/web/20111124141552if_/https://s.ytimg.com/yt/img/videomanager/vm-sprite-vflb_70nU.png) -78px 0px;
+    background-size: auto;
+    width: 13px;
+    height: 13px;
+    margin-bottom: 4px;
+}
+#watch-playlist-privacy-icon.private img, #watch7-headline #watch-privacy-icon.private img {
+    background: no-repeat url(https://web.archive.org/web/20111124141552if_/https://s.ytimg.com/yt/img/videomanager/vm-sprite-vflb_70nU.png) -70px 0px;
+    background-size: auto;
+    width: 8px;
+    height: 13px;
+    margin-bottom:5px;
+}
+.livestream_chat .create_message .distiller_yt-sb .action_bar .jfk-button-action .jfk-button-text .run {
+    display: inline;
+}
+.livestream_chat .create_message .distiller_yt-sb .action_bar .jfk-button-action .jfk-button-text {
+  width: 100%;
+}
+.livestream_chat .create_message .distiller_yt-sb .action_bar .jfk-button-action .jfk-button-text {
+  margin-top: 0px;
+}
+.livestream_chat .create_message .distiller_yt-sb .action_bar {
+  position: absolute;
+  left: 216px;
+  top: 50px;
+}
+.gecko .livestream_chat .header .title .jfk-button {
+  line-height: 24px;
+}
+.gecko .livestream_chat .header .title .jfk-button {
+  line-height: 24px;
+}
+.livestream_chat .collapsible .open + .live_streamcontent_container {
+  height: calc(100% - 55px);
+}
+#live-chat-view-selector-sub-menu {
+    background: #ffffff;
+    border: 1px solid #999;
+    box-shadow: 0 0 3px #999;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+#live-chat-view-selector-sub-menu .yt-uix-button-menu-item-selected {
+    border-bottom: 1px solid #ebebeb;
+}
+#live-chat-view-selector-sub-menu .yt-uix-button-menu-item {
+    padding: 0px 5px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #000000;
+}
+.yt-uix-button-menu .yt-uix-button-menu-item.selected, .yt-uix-button-menu .yt-uix-button-menu-item-highlight .yt-uix-button-menu-item, .yt-uix-button-menu .yt-uix-button-menu-item:hover {
+    background-color: #E6E5E6;
+}
+#live-chat-view-selector-sub-menu li + li {
+    margin-top: 0;
+}
+#live-chat-view-selector-sub-menu {
+  top: 177px !important;
 }
 }
