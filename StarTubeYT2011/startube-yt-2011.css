@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         StarTube Early 2011 Aozora Tweaks
-@version      20250113.8.0
+@version      20250113.8.1
 @namespace    https://userstyles.world/user/thxdeeply
 @description  This style, powered with V3 and StarTube's 2011 theme, makes YouTube look more accurate to 2011 while keeping modern features intact.
 @author       thxdeeply
@@ -2707,8 +2707,8 @@ button {
   height: 54px;
 }
 [exp-aozora-home][exp-aozora-styles] .home .video-time, .video-actions {
-  right: 0;
-  bottom: 0;
+  right: 5px;
+  bottom: 5px;
   position: absolute;
 }
 [exp-aozora-styles] .home .branded-page-box a.yt-user-name {
