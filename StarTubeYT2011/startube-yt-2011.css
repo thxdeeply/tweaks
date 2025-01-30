@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         StarTube Early 2011 Aozora Tweaks
-@version      20250129.9.0
+@version      20250129.9.1
 @namespace    https://userstyles.world/user/thxdeeply
 @description  This style, powered with V3 and StarTube's 2011 theme, makes YouTube look more accurate to 2011 while keeping modern features intact.
 @author       thxdeeply
@@ -1444,6 +1444,9 @@ display: inline-block;
 
 
 if theme is dark {
+    .appbar-mini-cinema #player.watch-medium::before {
+    background-color: #111!important;
+}
     .lohp-large-shelf-container .context-data-item.clearfix > div:first-child, .flex-width-enabled .lohp-medium-shelves-container .lohp-media-object, [exp-aozora-home][exp-aozora-styles] .home .branded-page-box .yt-lockup-grid .yt-lockup-thumbnail {
   background: #111!important;
   border: 1px solid #060606!important;
