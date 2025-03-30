@@ -1,15 +1,15 @@
 /* ==UserStyle==
 @name         StarTube Early 2011 Aozora Tweaks
-@version      20250129.9.1
+@version      20250329.10.0
 @namespace    https://userstyles.world/user/thxdeeply
 @description  This style, powered with V3 and StarTube's 2011 theme, makes YouTube look more accurate to 2011 while keeping modern features intact.
 @author       thxdeeply
 @license      No License
 @preprocessor   stylus
 
-@var  select  autoplay-control "Autoplay Controls"  ["slider:Slider", "checkbox:Checkbox"]
+@var  select  autoplay-control "Autoplay Controls"  ["slider:Slider", "checkbox:Checkbox", "off:Off"]
 @var  select  logo "Logo Color"  ["red:Red", "orange:Orange", "yellow:Yellow", "green:Green", "cyan:Cyan", "blue:Blue", "purple:Purple", "pink:Pink"]
-@var  select  notifs "Notification Position"  ["left:Left", "right:Right"]
+@var  select  notifs "Notification Position"  ["on:On", "off:Off"]
 @var  select  theme "Themes" ["light:Light", "dark:Dark"]
 ==/UserStyle== */
 
@@ -64,6 +64,9 @@
   overflow: visible;
   top: -2px;
 }
+.checkbox-on-off {
+  display: inline!important;
+}
 .yt-uix-checkbox-on-off label .toggle {
   display: none;
 }
@@ -86,11 +89,15 @@
     /* Slider */
 if autoplay-control is slider {
 .yt-uix-checkbox-on-off {
+  visibility: visible;
   width: 18px;
   height: 11px;
   position: relative;
   overflow: visible;
   top: -2px;
+}
+.checkbox-on-off {
+  display: inline!important;
 }
 .yt-uix-checkbox-on-off label .toggle {
   display: none;
@@ -112,6 +119,29 @@ if autoplay-control is slider {
 }
 }
 
+    /* Autoplay Off */
+if autoplay-control is off {
+.checkbox-on-off {
+  display: none;
+}
+[rel-head-added="true"] .autoplay-bar .watch-sidebar-head, [rel-head-added="true"] .checkbox-on-off, [poly-layout] #st-ap-hover, [show-card="false"] #st-ap-card-holder {
+  display: none;
+}
+}
+if notifs is on {
+#yt-masthead-user #sb-button-notify {
+  display: inline;
+}
+}
+if notifs is off {
+#yt-masthead-user #sb-button-notify {
+  display: none;
+}
+[exp-aozora-header] body .v3 #yt-masthead-user {
+  padding:3px 0.5em;
+  margin-right: 0!important;
+}
+}
 /* Other Code */
 a:focus {
   background-color: #e7ecfa;
@@ -486,7 +516,11 @@ border-top-color: #000;
   border-color: transparent #fff;
 }
 #watch-description.yt-uix-expander-collapsed #watch-description-content.click-to-buy {
-  height: 96px;
+  height: 106px;
+}
+.v3:not([wl^="w7"]):not([wl^="w4"]) #watch-description.yt-uix-expander-collapsed #watch-description-content.click-to-buy {
+  max-height: 106px;
+  min-height: 106px;
 }
 #watch-description #watch-description-content.click-to-buy {
   min-height: 103px;
@@ -959,6 +993,18 @@ a.spf-link:focus {
     background: no-repeat url(https://s.ytimg.com/yt/img/master.png) -16px -142px;
     transform: rotate(0deg);
 }
+.livestream_chat .header .oz-sprite-conversation-expander {
+  right: 4px;
+  width: 16px;
+  height: 16px;
+  top: 3px;
+  background:
+no-repeat url("https://s.ytimg.com/yt/img/master.png") 0px -142px;
+  transform: rotate(0deg);
+}
+.livestream_chat .header:hover .oz-sprite-conversation-expander {
+  filter: none;
+}
 .oz-sprite-conversation-expander {
     background: no-repeat url(https://s.ytimg.com/yt/img/master.png) 0 -142px;
 }
@@ -1207,10 +1253,9 @@ display: inline-block;
   border-color: #999;
 }
 #watch7-subscription-container .channel-settings-link .yt-uix-button-icon-settings {
-  background: no-repeat url(https://s.ytimg.com/yt/imgbin/www-master-vfl8ZHa_q.png) -68px -102px;
-  background-size: auto;
-  width: 13px;
-  height: 12px;
+  background: none;
+  width: 0;
+  height: 0;
 }
 .livestream_chat.past_stream .header .now {
   background-color: transparent;
@@ -1255,6 +1300,17 @@ display: inline-block;
 .oz-sprite.oz-page-verified {
     color: #666;
 }
+.oz-embed-panel {
+  background-color: #111 !important;
+}
+.oz-embed-title:after {
+  filter: invert(1)
+  color: #497ceb !important;
+}
+.oz-video-embed-title a {
+  color: #497ceb !important;
+}
+
 .oz-sprite.oz-page-verified:hover {
     color: #4272db;
 }
@@ -1449,7 +1505,7 @@ if theme is dark {
 }
     .lohp-large-shelf-container .context-data-item.clearfix > div:first-child, .flex-width-enabled .lohp-medium-shelves-container .lohp-media-object, [exp-aozora-home][exp-aozora-styles] .home .branded-page-box .yt-lockup-grid .yt-lockup-thumbnail {
   background: #111!important;
-  border: 1px solid #060606!important;
+  border: 1px solid #333!important;
   border-radius: 3px;
   padding: 4px 4px 2px 4px;
 }
@@ -1494,6 +1550,243 @@ if theme is dark {
   color: #fff !important;
   background-image: linear-gradient(var(--color-ddd), var(--color-fff)) !important;
   border-color: var(--color-ccc) !important;
+}
+#watch7-subscription-container .channel-settings-link:hover {
+  color: #fff !important;
+  background-image: linear-gradient(var(--color-bbb), var(--color-ddd)) !important;
+  border-color: var(--color-ccc) !important;
+}
+#watch7-subscription-container .channel-settings-link:active {
+  color: #fff !important;
+  background-image: linear-gradient(var(--color-ddd), var(--color-bbb)) !important;
+  border-color: var(--color-ccc) !important;
+}
+[aozora-styles] .oz_frame .yt-uix-button-subscribe-branded:hover, [aozora-styles] .oz_frame .yt-uix-button-subscribed-branded:hover, [aozora-styles] .distiller-standard-button:hover, [aozora-styles] .yt-uix-pager .yt-uix-button:hover, [aozora-styles] .continuation_item_wrapper button:hover, [aozora-styles] [wl^="w5"]:not([wl^="w5d"]) #st-above-videos-row .yt-uix-button:hover, .st-aozora-sub .yt-uix-button-subscribe-branded:hover, .st-aozora-sub .yt-uix-button-subscribed-branded:hover, .aozora-button:hover, [aozora-styles] #page:not(.watch) .yt-uix-button-subscribe-branded:hover, [aozora-styles] #page:not(.watch) .yt-uix-button-subscribed-branded:hover, html:not([cosmic-buttons]) [wl^="w5"] .st-ltod .yt-uix-button:hover {
+  padding:0 6px !important;
+  height: 25px !important;
+  border: 1px solid var(--color-ccc) !important;
+  color: #ccc !important;
+  background-image: linear-gradient(var(--color-bbb), var(--color-ddd)) !important;
+  border-radius:3px;
+  font-weight: normal;
+  font-size: 12px;
+  box-shadow: none;
+  opacity: 1;
+}
+[aozora-styles] .oz_frame .yt-uix-button-subscribe-branded:hover, [aozora-styles] .oz_frame .yt-uix-button-subscribed-branded:hover, [aozora-styles] .distiller-standard-button:hover, [aozora-styles] .yt-uix-pager .yt-uix-button:hover, [aozora-styles] .continuation_item_wrapper button:hover, [aozora-styles] [wl^="w5"]:not([wl^="w5d"]) #st-above-videos-row .yt-uix-button:hover, .st-aozora-sub .yt-uix-button-subscribe-branded:hover, .st-aozora-sub .yt-uix-button-subscribed-branded:hover, .aozora-button:hover, [aozora-styles] #page:not(.watch) .yt-uix-button-subscribe-branded:hover, [aozora-styles] #page:not(.watch) .yt-uix-button-subscribed-branded:hover, html:not([cosmic-buttons]) [wl^="w5"] .st-ltod .yt-uix-button:active {
+  padding:0 6px !important;
+  height: 25px !important;
+  border: 1px solid var(--color-ccc) !important;
+  color: #ccc !important;
+  background-image: linear-gradient(var(--color-ddd), var(--color-bbb)) !important;
+  border-radius:3px;
+  font-weight: normal;
+  font-size: 12px;
+  box-shadow: none;
+  opacity: 1;
+}
+[aozora-styles] .oz_frame .yt-uix-button-subscribe-branded, [aozora-styles] .oz_frame .yt-uix-button-subscribed-branded, [aozora-styles] .distiller-standard-button, [aozora-styles] .yt-uix-pager .yt-uix-button, [aozora-styles] .continuation_item_wrapper button, [aozora-styles] [wl^="w5"]:not([wl^="w5d"]) #st-above-videos-row .yt-uix-button, .st-aozora-sub .yt-uix-button-subscribe-branded, .st-aozora-sub .yt-uix-button-subscribed-branded, .aozora-button, html:not([cosmic-buttons]) [wl^="w5"] .st-ltod .yt-uix-button, [aozora-styles] #page:not(.watch) .yt-uix-button-subscribe-branded, [aozora-styles] #page:not(.watch) .yt-uix-button-subscribed-branded, .oz-notification-read-iconz, .oz-notification-dismiss {
+  padding:0 6px !important;
+  height: 25px !important;
+  border: 1px solid var(--color-ccc) !important;
+  color: #ccc !important;
+  background-image: linear-gradient(var(--color-ddd), var(--color-fff)) !important;
+  border-radius:3px;
+  font-weight: normal;
+  font-size: 12px;
+  box-shadow: none;
+  opacity: 1;
+}
+.yt-uix-slider-next, .yt-uix-slider-prev {
+  border: 1px solid var(--color-ccc) !important;
+  color: #ccc !important;
+  background-image: linear-gradient(var(--color-ddd), var(--color-fff)) !important;
+}
+[aozora-styles] .oz_frame .yt-uix-button-subscribe-branded:hover, [aozora-styles] .oz_frame .yt-uix-button-subscribed-branded:hover, [aozora-styles] .distiller-standard-button:hover, [aozora-styles] .yt-uix-pager .yt-uix-button:hover, [aozora-styles] .continuation_item_wrapper button:hover, [aozora-styles] [wl^="w5"]:not([wl^="w5d"]) #st-above-videos-row .yt-uix-button:hover, .st-aozora-sub .yt-uix-button-subscribe-branded:hover, .st-aozora-sub .yt-uix-button-subscribed-branded:hover, .aozora-button:hover, html:not([cosmic-buttons]) [wl^="w5"] .st-ltod .yt-uix-button:hover, [aozora-styles] #page:not(.watch) .yt-uix-button-subscribe-branded:hover, [aozora-styles] #page:not(.watch) .yt-uix-button-subscribed-branded:hover, .oz-notification-read-iconz:hover, .oz-notification-dismiss:hover {
+  padding:0 6px !important;
+  height: 25px !important;
+  border: 1px solid var(--color-ccc) !important;
+  color: #ccc !important;
+  background-image: linear-gradient(var(--color-bbb), var(--color-ddd)) !important;
+  border-radius:3px;
+  font-weight: normal;
+  font-size: 12px;
+  box-shadow: none;
+  opacity: 1;
+}
+[aozora-styles] .oz_frame .yt-uix-button-subscribe-branded, [aozora-styles] .oz_frame .yt-uix-button-subscribed-branded:active, [aozora-styles] .distiller-standard-button:active, [aozora-styles] .yt-uix-pager .yt-uix-button:active, [aozora-styles] .continuation_item_wrapper button:active, [aozora-styles] [wl^="w5"]:not([wl^="w5d"]) #st-above-videos-row .yt-uix-button:active, .st-aozora-sub .yt-uix-button-subscribe-branded:active, .st-aozora-sub .yt-uix-button-subscribed-branded:active, .aozora-button:active, html:not([cosmic-buttons]) [wl^="w5"] .st-ltod .yt-uix-button:active, [aozora-styles] #page:not(.watch) .yt-uix-button-subscribe-branded:active, [aozora-styles] #page:not(.watch) .yt-uix-button-subscribed-branded:active, .oz-notification-read-iconz:active, .oz-notification-dismiss:active {
+  padding:0 6px !important;
+  height: 25px !important;
+  border: 1px solid var(--color-ccc) !important;
+  color: #ccc !important;
+  background-image: linear-gradient(var(--color-ddd), var(--color-bbb )) !important;
+  border-radius:3px;
+  font-weight: normal;
+  font-size: 12px;
+  box-shadow: none;
+  opacity: 1;
+}
+.oz-notification-read-button {
+  padding:0 6px !important;
+  height: 25px !important;
+  border: 1px solid var(--color-ccc) !important;
+  color: #ccc !important;
+  background-image: linear-gradient(var(--color-ddd), var(--color-fff)) !important;
+  border-radius:3px;
+  font-weight: normal;
+  font-size: 12px;
+  box-shadow: none;
+  opacity: 1;
+}
+.oz-notification-read-button:hover {
+  padding:0 6px !important;
+  height: 25px !important;
+  border: 1px solid var(--color-ccc) !important;
+  color: #ccc !important;
+  background-image: linear-gradient(var(--color-bbb), var(--color-ddd)) !important;
+  border-radius:3px;
+  font-weight: normal;
+  font-size: 12px;
+  box-shadow: none;
+  opacity: 1;
+}
+.oz-notification-read-button:active {
+  padding:0 6px !important;
+  height: 25px !important;
+  border: 1px solid var(--color-ccc) !important;
+  color: #ccc !important;
+  background-image: linear-gradient(var(--color-ddd), var(--color-bbb )) !important;
+  border-radius:3px;
+  font-weight: normal;
+  font-size: 12px;
+  box-shadow: none;
+  opacity: 1;
+}
+[aozora-styles] .oz_frame .yt-uix-button-subscribe-branded .yt-uix-button-content span, [aozora-styles] .oz_frame .yt-uix-button-subscribed-branded .yt-uix-button-content span, [aozora-styles] .distiller-standard-button span, .st-aozora-sub .yt-uix-button-subscribe-branded .yt-uix-button-content span, .st-aozora-sub .yt-uix-button-subscribed-branded .yt-uix-button-content span, .aozora-button, [aozora-styles] #page:not(.watch) .yt-uix-button-subscribe-branded .yt-uix-button-content span, [aozora-styles] #page:not(.watch) .yt-uix-button-subscribed-branded .yt-uix-button-content span, html:not([cosmic-buttons]) [wl^="w5"] .st-ltod .yt-uix-button span, #watch7-subscription-container .channel-settings-link {
+  color: #ccc !important;
+  font-size: 12px !important;
+  font-weight: normal !important;
+}
+[layout^="stargazer"] .st-video-dd-trigger span, [aozora-styles] .st-video-dd-trigger span {
+  color: #ccc;
+}
+[layout^="stargazer"] .st-video-dd-trigger, [aozora-styles] .st-video-dd-trigger {
+  order: 2;
+  margin-left: 0;
+  border: 1px solid var(--color-ccc) !important;
+  color: #ccc !important;
+  background-image: linear-gradient(var(--color-ddd), var(--color-fff)) !important;
+  padding:2px 4px 4px !important;
+  border-radius:5px;
+  font-size: 14px;
+  height: unset;
+  box-shadow: none !important;
+}
+[layout^="stargazer"] .st-video-dd-trigger, [aozora-styles] .st-video-dd-trigger:hover {
+  order: 2;
+  margin-left: 0;
+  border: 1px solid var(--color-ccc) !important;
+  color: #ccc !important;
+  background-image: linear-gradient(var(--color-bbb), var(--color-ddd)) !important;
+  padding:2px 4px 4px !important;
+  border-radius:5px;
+  font-size: 14px;
+  height: unset;
+  box-shadow: none !important;
+}
+[layout^="stargazer"] .st-video-dd-trigger, [aozora-styles] .st-video-dd-trigger:active {
+  order: 2;
+  margin-left: 0;
+  border: 1px solid var(--color-ccc) !important;
+  color: #ccc !important;
+  background-image: linear-gradient(var(--color-ddd), var(--color-bbb)) !important;
+  padding:2px 4px 4px !important;
+  border-radius:5px;
+  font-size: 14px;
+  height: unset;
+  box-shadow: none !important;
+}
+[wl^="w5"]:not([wl="w5d"]) #watch-description-toggle .yt-uix-button-text {
+  background-image: linear-gradient(var(--color-fff), var(--color-ddd)) !important;
+  width: 100%;
+  border:none;
+  border-bottom: 1px solid #333;
+  color: #ccc;
+  font-size: 12px;
+  font-weight: normal;
+  border-radius:
+0 0 5px 5px;
+}
+[aozora-styles] .distiller_yt-sb .sb_text_input, [aozora-styles] .distiller_yt-sb-standin .box {
+  padding:0 2px;
+  border-radius:0;
+  border:1px solid #333;
+  height: 48px;
+  width: 468px;
+}
+[wl^="w5"] .video-extras-sparkbar-likes {
+  border:1px solid #060606;
+  height: 4px;
+  border-right:1px solid #060606;
+  background:#060;
+  border-radius:3px 0 0 3px;
+}
+[wl^="w5"] .video-extras-sparkbar-dislikes {
+  border:1px solid #060606;
+  float: right;
+  height: 4px;
+  margin-right: -1px;
+  background:#c00;
+  border-radius:0 3px 3px 0;
+  border-left:none;
+}
+[wl^="w5"]:not([wl="w5d"]) #watch-description-toggle:hover .yt-uix-button-text {
+  background-image: linear-gradient(rgb(255, 255, 255) 0%, rgb(234, 242, 253) 100%);
+  border:
+none;
+    border-bottom-width: medium;
+    border-bottom-style: none;
+    border-bottom-color: currentcolor;
+  border-bottom:
+1px solid #333;
+  color: #669acc;
+}
+[exp-legacy-comments] .distiller_yt-thread_user-content {
+  color: #ccc!important;
+}
+.main-notification-panel, .oz-static-loading {
+  background-color: #111!important;
+}
+.oz-panel-title, .oz-embed-header {
+  background:#090909!important;
+  border-bottom:1px solid #333 !important;
+}
+.oz-link.oz-notification-panel-title .oz-dark-text {
+  color: #ccc !important;
+}
+.oz-link.oz-notification-panel-title .oz-dark-text:after {
+  color: #ccc !important;
+}
+.notification-section > div:nth-child(odd) {
+  background:#090909!important;
+  border-bottom: 1px solid #333!important;
+}
+.notification-section > div:nth-child(even) {
+  background-color: #111!important;
+  border-bottom: 1px solid #333!important;
+}
+.oz-thumb-80 > .oz-thumb {
+  border: 3px double #333!important;
+  background:#111!important;
+}
+[wl^="w5"]:not([wl^="w5d"]) .st-owner-name a {
+  color: #497ceb!important;
+}
+.oz-notification-content .headline {
+  color: #497ceb!important;
+}
+.oz-notification-content .body, .oz-notification-content .details {
+  color: #999!important;
 }
 [exp-aozora-home] .home .branded-page-box .context-data-item:hover {
   background: #1b293f!important;
@@ -2183,7 +2476,7 @@ a:focus {
 }
 [exp-aozora-styles] #page.watch .context-data-item.video-list-item .video-thumb, #watch7-playlist-tray .video-list-item .video-thumb, [aozora-home][aozora-styles] .home .branded-page-box .yt-lockup-grid .yt-lockup-thumbnail, [aozora-home][aozora-styles] .yt-lockup-thumbnail, [aozora-home][aozora-styles] .yt-lockup-thumbnail {
   background: #111;
-  border: 1px solid #060606;
+  border: 1px solid #333;
 }
 [exp-watch5d] .video-extras-sparkbar-likes {
   border: 1px solid #060606;
@@ -2203,12 +2496,12 @@ a:focus {
 }
 .distiller-standard-button:hover, .distiller-button.jfk-button-action:hover, .stream_content > .continuation_item_wrapper > .load-more-button > .jfk-button-text:hover, [exp-aozora-styles] .continuation_item_wrapper button:hover, [exp-aozora-comments] .sentiment:hover, [exp-aozora-comments] .distiller_yt-post-option-menu:hover, [exp-aozora-comments] .distiller_yt-thread .action_bar .reply-button:hover, .livestream_chat .header .title .jfk-button:hover, [aozora-styles] .distiller-standard-button:hover, [aozora-styles] .yt-uix-pager .yt-uix-button:hover, [aozora-styles] .watch5 .yt-uix-button-default:hover, [aozora-styles] .continuation_item_wrapper button:hover, [exp-aozora-subscribe] .yt-uix-button-subscribe-branded:hover, [exp-aozora-subscribe] .yt-uix-button-subscribed-branded:hover, [exp-watch5c] .watch5 .yt-uix-button-subscribe-branded:hover, [exp-watch5c] .watch5 .yt-uix-button-subscribed-branded:hover, [exp-watch5c] .watch5 #watch5-actions-views-row .yt-uix-button:hover, [aozora-header] body .v3 #yt-masthead #search-btn:hover {
   color: #fff!important;
-  background-image: linear-gradient(var(--color-ddd), var(--color-fff)) !important;
+  background-image: linear-gradient(var(--color-bbb), var(--color-ddd)) !important;
   border-color: var(--color-ccc) !important;
   box-shadow: rgb(153, 153, 153) 0px 0px 3px 0px;
 }
 .distiller-standard-button:active, .distiller-button.jfk-button-action:active, .stream_content > .continuation_item_wrapper > .load-more-button > .jfk-button-text:active, [exp-aozora-styles] .continuation_item_wrapper button:active, .livestream_chat .header .title .jfk-button:active, [aozora-styles] .distiller-standard-button:active, [aozora-styles] .yt-uix-pager .yt-uix-button:active, [aozora-styles] .watch5 .yt-uix-button-default.yt-uix-button-toggled, [aozora-styles] .watch5 .yt-uix-button-default:active, [aozora-styles] .continuation_item_wrapper button:active, [exp-aozora-subscribe] .yt-uix-button-subscribe-branded:active, [exp-aozora-subscribe] .yt-uix-button-subscribed-branded:active, [exp-watch5c] .watch5 .yt-uix-button-subscribe-branded:active, [exp-watch5c] .watch5 .yt-uix-button-subscribed-branded:active, [exp-watch5c] .watch5 #watch5-actions-views-row .yt-uix-button:active, [aozora-header] body .v3 #yt-masthead #search-btn:active {
-  background-image: linear-gradient(var(--color-f1), var(--color-fff)) !important;
+  background-image: linear-gradient(var(--color-ddd), var(--color-bbb)) !important;
   color: #fff!important;
 }
 [aozora-styles] .distiller-standard-button span, [exp-aozora-subscribe] .yt-uix-button-subscribe-branded .yt-uix-button-content span, [exp-aozora-subscribe] .yt-uix-button-subscribed-branded .yt-uix-button-content span, [exp-watch5c] .watch5 .yt-uix-button-subscribe-branded .yt-uix-button-content span, [exp-watch5c] .watch5 .yt-uix-button-subscribed-branded .yt-uix-button-content span, [exp-watch5c] .watch5 #watch5-actions-views-row #ltod .run {
@@ -3087,6 +3380,438 @@ font-weight: normal;
 }
 #footer-links {
   order: 1;
+  display: inline;
+}
+
+/* Notif Box */
+.oz-notification-entry {
+  font:13px Arial,sans-serif;
+}
+.oz-panel-title, .oz-embed-header {
+  background:#f0f0f0;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  height: 28px;
+}
+.oz-notification-panel-title {
+  line-height: initial;
+  margin-left: 0;
+  text-align: left;
+}
+.oz-notification-read-icon {
+  background:none;
+  height: fit-content;
+  width: fit-content;
+}
+.oz-notification-read-icon:before {
+  content:"Mark as read";
+}
+.oz-notification-read-button {
+  filter: none;
+  opacity: 1;
+  font-family:Arial;
+  padding: 0 6px !important;
+  height: 25px !important;
+  line-height: 25px!important;
+  border: 1px solid #ccc;
+  color: #000;
+  background-image: linear-gradient(rgb(255,255,255) 0%, rgb(239,239,239) 100%);
+  border-radius:
+3px;
+  font-weight: normal;
+  font-size: 12px;
+  box-shadow: none;
+  vertical-align: middle;
+}
+.oz-link.oz-notification-panel-title .oz-dark-text {
+  font-size: 0 !important;
+  margin-top:5px;
+  margin-bottom:3px;
+}
+.oz-link.oz-notification-panel-title .oz-dark-text:after {
+  content: "Inbox";
+  color: #000;
+  font-size: 16px !important;
+  font-weight: 700;
+  line-height:28px;
+  height: 28px;
+}
+.oz-embed-title {
+  font-size: 0 !important;
+}
+.oz-embed-title:after {
+  content: "Back";
+  color: #03c;
+  font-size: 16px !important;
+  font-weight: 700;
+  line-height:28px;
+  height: 28px;
+}
+.branded-page-module-title-v2 .branded-page-module-title-text-v2 {
+  z-index: 0;
+}
+.oz-notification-entry {
+  padding:10px;
+  margin:0;
+}
+.main-notification-panel, .oz-static-loading {
+  background-color: #fff;
+}
+.notification-section > div:nth-child(even) {
+  background-color: #fff;
+}
+
+.notification-section > div:nth-child(odd) {
+  background-color: #f0f0f0;
+}
+.oz-notification-entry.read .oz-notification {
+  opacity: 1;
+}
+.oz-notification-entry.read, .oz-notification-entry.read .oz-notification {
+  background-color: transparent;
+}
+.oz-notification-entry {
+  -webkit-border-radius:0;
+  border-radius:0;
+  -webkit-box-shadow:none;
+  box-shadow: none;
+  border-bottom: 1px solid #ccc;
+}
+.oz-thumb-80 {
+  width: 72px;
+  height: 72px;
+}
+.oz-thumb-80 > .oz-thumb {
+  width: 66px;
+  height: 66px;
+  border:3px double #ccc;
+  background:white;
+}
+.oz-notification-avatar-thumb {
+  float: left;
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+}
+.oz-notification-avatar-container {
+  height: 72px;
+  width: 82px;
+  display: inline-block;
+  vertical-align: top;
+}
+.oz-notification-content .headline {
+  color: #03c;
+  font-weight: bold;
+  line-height: 18px;
+  margin-top: 0;
+}
+.oz-notification-content .body {
+  color: #333;
+  line-height: 16px;
+}
+.oz-notification-content .details {
+  color: #333;
+  margin-top: 0;
+}
+.oz-notification-content-container {
+  height: 72px;
+}
+.oz-notification-content .body {
+  color: #333;
+  line-height: 16px;
+  font-size: 12px;
+}
+.oz-notification-dismiss {
+  background:none;
+  height: fit-content;
+  width: fit-content;
+  filter: none;
+  opacity: 1!important;
+  font-family:Arial;
+  padding: 0 6px !important;
+  height: 25px !important;
+  line-height: 25px!important;
+  border: 1px solid #ccc;
+  color: #000;
+  background-image: linear-gradient(rgb(255,255,255) 0%, rgb(239,239,239) 100%);
+  border-radius:
+3px;
+  font-weight: normal;
+  font-size: 12px;
+  box-shadow: none;
+  vertical-align: middle;
+}
+.oz-notification-dismiss:after {
+  content: "Delete";
+}
+.oz-dismiss-button {
+  right: 10px;
+  bottom: 10px;
+  top: revert;
+}
+.oz-notification-origin {
+  visibility: hidden;
+}
+.oz-panel-padding-bottom {
+  padding-bottom: 0;
+}
+.site-center-aligned .sb-card-arrow, .site-center-aligned .sb-card-body-arrow {
+  right: 52px;
+  visibility: hidden;
+}
+.oz-embed-panel {
+  display: none;
+  background-color: #fff;
+  outline:none;
+}
+.embed-title .oz-embed-navigator-header-with-title-component {
+  filter: none;
+  opacity: 1;
+}
+.oz-embed-navigator-title {
+  line-height: 28px;
+}
+.plus-context-origin {
+  text-align: left;
+  text-decoration: none;
+  display: none;
+}
+.distiller-post-embed {
+  margin:0 10px;
+}
+[exp-aozora-comments] .distiller-post-embed .distiller_yt-thread .comment:hover {
+  background-color: transparent;
+}
+.distiller-post-embed .distiller_yt-thread .thread .post {
+  padding:0;
+}
+.oz-post-embed-entry {
+  margin:0 !important;
+}
+[static][exp-legacy-comments] .distiller-post-embed .comment .content {
+  width: 363px;
+}
+.distiller-post-embed .distiller_yt-post-option-menu > .oz-sprite {
+  border:1px solid transparent;
+  border-width:5px 5px 0;
+  border-top-color: #767676;
+  margin-left: -2px;
+  background:none;
+  width: 0;
+  height: 0;
+  opacity:1;
+}
+[exp-aozora-comments] .distiller-post-embed .distiller_yt-thread .distiller_yt-post-option-menu {
+  width: px;
+}
+[exp-legacy-comments] .distiller-post-embed .distiller_yt-thread .distiller_yt-post-option-menu {
+  cursor: pointer;
+  float: right;
+  height: 20px;
+  margin-top: 5px;
+}
+[exp-legacy-comments] .distiller-post-embed .distiller_yt-post-option-menu {
+  border-radius: 4px;
+}
+[exp-legacy-comments] .distiller_yt-thread_user-content {
+  color: #000;
+}
+.distiller-post-embed .post .distiller_yt-thread_user-content {
+  padding: 8px 0 6px 0;
+}
+[exp-aozora-comments] .distiller-post-embed .distiller_yt-thread .comment {
+  padding: 0;
+}
+.distiller-post-embed .post .distiller_yt-thread_user-content {
+  padding: 8px 0 6px 0;
+  width: 290px;
+}
+.oz-video-embed-title-shadow {
+  background-image: none;
+}
+.oz-play-embed.oz-sprite {
+  background: none;
+}
+.oz-embed-panel-content .oz-post-embed-video {
+  width: 358px;
+  height: 68px;
+}
+.oz-post-embed-video-thumb {
+  max-height: none !important;
+  width: 90px;
+  height: 54px;
+  border: 3px double #999;
+  margin-right: 262px;
+}
+.distiller-post-embed {
+  border:0;
+}
+.distiller-post-embed .headline {
+  margin-left: 0;
+}
+.oz-post-embed-video {
+  background-color: transparent;
+}
+.oz-border-top-mask, .oz-border-bottom-mask {
+  border-top: 0;
+}
+.oz-border-left-mask, .oz-border-right-mask {
+  border-left:0;
+}
+.oz-video-embed-title {
+  position: absolute;
+  z-index: 20;
+  font: 700 13px Arial,sans-serif !important;
+  font-weight: normal;
+}
+[exp-legacy-comments] .distiller-post-embed .distiller_yt-post_data {
   display: flex;
+  flex-direction: row-reverse;
+}
+.distiller-post-embed .distiller_yt-thread .headline {
+  margin-bottom: 0;
+  position: absolute;
+  bottom: 9px!important;
+  left: 102px;
+  z-index: 1;
+}
+.oz-video-embed-title a {
+  color: #03c;
+}
+.oz-video-embed-title-container {
+  top: 6px;
+  left: 102px;
+}
+[exp-legacy-comments] .distiller-post-embed .comment header {
+  display: block;
+  align-items: center;
+}
+.distiller-post-embed .comment-text, .distiller-post-embed .comment .author {
+  font-size: 12px;
+  line-height: 17px!important;
+}
+.distiller-post-embed .distiller_yt-thread .author .profileLink {
+  margin-top: 1px;
+}
+[exp-legacy-comments] .distiller_yt-post_comment_section .entries .contents > .continuation_item_wrapper .jfk-button span, [exp-legacy-comments] .distiller-post-embed .profileLink {
+  color: #03c;
+  font-weight: normal;
+  font-size: 12px;
+}
+.distiller-post-embed .distiller_yt-thread {
+  line-height: 12px;
+}
+.distiller-post-embed .headline .metadata {
+  display: block;
+  margin-top: 0;
+}
+.distiller_yt-thread .thread .post {
+  color: #666;
+}
+.distiller-post-embed .distiller_yt-thread .thread .comments {
+  border-top:
+0;
+}
+[exp-legacy-comments] .distiller-post-embed .distiller_yt-post-option-menu, [exp-legacy-comments] .distiller_yt-thread .action_bar .reply-button {
+  height: 19px;
+  padding: 0 7px;
+}
+.oz-embed-navigator-return-button {
+  background: none;
+  display: inline-block;
+  height: 0;
+  vertical-align: 0;
+  width: 0;
+  margin-right: -5px;
+}
+.oz-video-embed-title-container {
+  padding: 0;
+}
+.distiller-post-embed .distiller_yt-thread .headline {
+  margin-bottom: 0;
+  position: absolute;
+  bottom: -3px;
+}
+.auto-height-controlled .notifications-feed {
+  max-height: 350px!important;
+  overflow-y: overlay;
+}
+.oz-default-panel-content .oz-panel-padding-bottom {
+  min-height: 350px!important;
+}
+.oz-panel-previous-posts-button {
+  -webkit-border-radius:3px 3px 0 0;
+  border-radius:3px 3px 0 0;
+  background:transparent;
+}
+.distiller-post-embed .headline .metadata {
+  display: none;
+  margin-top: 0;
+}
+.sb-on {
+
+  -webkit-box-shadow:0 0 3px #999;
+  box-shadow: 0 0 3px #999;
+}
+.site-left-aligned #yt-masthead-container, .site-left-aligned #masthead-appbar, .site-left-aligned #footer-container, #ticker, body #sb-wrapper {
+  max-width: 970px;
+  width: auto !important;
+}
+.sb-card {
+  position: absolute;
+  right: 0;
+}
+.html5-video-container {
+  background:
+#000 no-repeat scroll center center;
+  z-index: 0;
+}
+.html5-endscreen {
+  cursor: default;
+  overflow:
+hidden;
+  z-index: 0;
+}
+.annotation.iv-branding {
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+}
+.oz-default-panel-content .oz-panel-padding-bottom {
+  min-height: 300px !important;
+}
+/* End */
+
+#watch-description-extra-info {
+  margin-left: 410px;
+  width: 165px;
+}
+#watch7-subscription-container .channel-settings-link {
+  line-height: initial;
+  font-weight: normal;
+  font-size: 12px;
+  color: #000;
+  padding:
+0 6px !important;
+  height: 25px !important;
+  border:
+1px solid #ccc;
+  background-image: linear-gradient(#fff 0%, #efefef 100%);
+  border-radius:
+3px;
+  box-shadow: none;
+  opacity: 1;
+  margin-left: -10px;
+  position: relative;
+  top: -1px;
+  left: 10px;
+}
+#watch7-headline #watch-privacy-icon.public img {
+    margin-bottom:-2px;
+}
+#feed-pyv-container2 {
+  margin-top: 10px;
+  padding-top: 7px;
+  background:#ffd74c17;
 }
 }
