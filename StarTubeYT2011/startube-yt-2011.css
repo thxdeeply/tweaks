@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         StarTube Early 2011 Aozora Tweaks
-@version      20250329.10.4
+@version      20250329.10.5
 @namespace    https://userstyles.world/user/thxdeeply
 @description  This style, powered with V3 and StarTube's 2011 theme, makes YouTube look more accurate to 2011 while keeping modern features intact.
 @author       thxdeeply
@@ -3551,7 +3551,7 @@ font-weight: normal;
   content: "Delete";
 }
 .oz-dismiss-button {
-  right: 10px;
+  right: 20px;
   bottom: 10px;
   top: revert;
 }
@@ -3770,13 +3770,13 @@ font-weight: normal;
 .html5-video-container {
   background:
 #000 no-repeat scroll center center;
-  z-index: 0;
+  z-index: 1;
 }
 .html5-endscreen {
   cursor: default;
   overflow:
 hidden;
-  z-index: 0;
+  z-index: 1;
 }
 .annotation.iv-branding {
   top: 20px;
@@ -3829,5 +3829,31 @@ hidden;
 }
 .oz-video-embed-title a {
   color: #03c !important;
+}
+.sb-card-content {
+  width: 340px !important;
+}
+.oz-notification-panel-title {
+  width: fit-content;
+}
+.oz-panel-previous-posts-button {
+  margin:0;
+  padding:17px 0;
+  text-align: center;
+  width: 340px;
+}
+.oz-notification-entry {
+  width: 322px;
+}
+.oz-notification {
+  background-color: transparent;
+}
+[exp-aozora-comments] .reply-button::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background:
+no-repeat url(https://s.ytimg.com/yt/imgbin/www-master-vfl8ZHa_q.png) -48px -54px;
+  margin: 4px 3px 2px -1px;
 }
 }
