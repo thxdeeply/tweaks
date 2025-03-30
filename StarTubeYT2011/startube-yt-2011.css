@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         StarTube Early 2011 Aozora Tweaks
-@version      20250329.10.1
+@version      20250329.10.2
 @namespace    https://userstyles.world/user/thxdeeply
 @description  This style, powered with V3 and StarTube's 2011 theme, makes YouTube look more accurate to 2011 while keeping modern features intact.
 @author       thxdeeply
@@ -1737,6 +1737,9 @@ none;
 1px solid #333;
   color: #669acc;
 }
+[exp-aozora-comments] .distiller_yt-post_comment_section .entries .contents > .continuation_item_wrapper .jfk-button span, [exp-aozora-comments] .profileLink, [exp-aozora-comments] .distiller_yt-post_comment_section .link_action .link_action_text, [exp-aozora-comments] :hover .run > .proflinkWrapper > .proflinkPrefix, [exp-aozora-comments] :hover .run > .proflinkWrapper > .ot-hashtag, [exp-aozora-comments] :hover .run > .proflinkWrapper > .proflink, [exp-aozora-comments] .proflinkPrefix, [exp-aozora-comments] .ot-hashtag, [exp-aozora-comments] .proflink, [exp-aozora-comments] .distiller_yt-thread_user-content .run-link, [exp-aozora-comments] .load-more-link {
+  color: #497ceb !important;
+}
 [exp-legacy-comments] .distiller_yt-thread_user-content {
   color: #ccc!important;
 }
@@ -1778,6 +1781,9 @@ none;
 
 .oz-sprite.oz-page-verified:hover {
     color: #4272db;
+}
+[exp-aozora-comments] .distiller_yt-post_comment_section .entries .contents > .continuation_item_wrapper .jfk-button span, [exp-aozora-comments] .profileLink, [exp-aozora-comments] .distiller_yt-post_comment_section .link_action .link_action_text, [exp-aozora-comments] :hover .run > .proflinkWrapper > .proflinkPrefix, [exp-aozora-comments] :hover .run > .proflinkWrapper > .ot-hashtag, [exp-aozora-comments] :hover .run > .proflinkWrapper > .proflink, [exp-aozora-comments] .proflinkPrefix, [exp-aozora-comments] .ot-hashtag, [exp-aozora-comments] .proflink, [exp-aozora-comments] .distiller_yt-thread_user-content .run-link, [exp-aozora-comments] .load-more-link {
+  color: #03c;
 }
 [wl^="w5"]:not([wl^="w5d"]) .st-owner-name a {
   color: #497ceb!important;
@@ -3813,5 +3819,8 @@ hidden;
   margin-top: 10px;
   padding-top: 7px;
   background:#ffd74c17;
+}
+.oz-embed-panel-content {
+  min-height: 97px;
 }
 }
