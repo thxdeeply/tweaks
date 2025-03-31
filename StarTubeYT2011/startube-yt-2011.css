@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         StarTube Early 2011 Aozora Tweaks
-@version      20250329.10.5
+@version      20250330.10.6
 @namespace    https://userstyles.world/user/thxdeeply
 @description  This style, powered with V3 and StarTube's 2011 theme, makes YouTube look more accurate to 2011 while keeping modern features intact.
 @author       thxdeeply
@@ -3770,18 +3770,15 @@ font-weight: normal;
 .html5-video-container {
   background:
 #000 no-repeat scroll center center;
-  z-index: 1;
 }
 .html5-endscreen {
   cursor: default;
   overflow:
 hidden;
-  z-index: 1;
 }
 .annotation.iv-branding {
   top: 20px;
   right: 20px;
-  z-index: 1;
 }
 .oz-default-panel-content .oz-panel-padding-bottom {
   min-height: 300px !important;
@@ -3855,5 +3852,8 @@ hidden;
   background:
 no-repeat url(https://s.ytimg.com/yt/imgbin/www-master-vfl8ZHa_q.png) -48px -54px;
   margin: 4px 3px 2px -1px;
+}
+[static] #masthead-positioner {
+  position: relative;
 }
 }
